@@ -5,11 +5,13 @@ var loveFrame;
 var rm;
 var textVoice;
 //= new p5.Speech();
+var song;
 
 function preload() {
 
     loveFrame = loadImage('assets/frame.png');
     mytext = loadStrings('assets/mytext.txt');
+    song = loadSound('assets/song.mp3');
 }
 
 function setup() {
@@ -20,7 +22,9 @@ function setup() {
     textFont("Georgia");
     background(7); //smokey black
     rm = new RiMarkov(10);
-    rm.loadText(mytext.join(' '));  
+    rm.loadText(mytext.join(' '));
+    song.setVolume(0.4);
+    song.play();
     console.log("Hello Old Ones");
 }
     
@@ -55,5 +59,6 @@ function windowResized() {
     background(7);
     imageMode(CENTER);
     image(loveFrame, width/2, height/2, width/1.01, height/1.01);
+    
     
 }
