@@ -4,7 +4,6 @@ var mytext;
 var loveFrame;
 var rm;
 var textVoice;
-//= new p5.Speech();
 var song;
 
 function preload() {
